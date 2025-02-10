@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gdp08kpue-go-gitops
+  description: This is GitOps manifest for gdp08kpue-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: gdp08kpue-go
+    backstage.io/kubernetes-id: gdp08kpue-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gdp08kpue-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gdp08kpue-go
